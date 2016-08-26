@@ -2,6 +2,7 @@
 import os
 import xml.etree.ElementTree as ET
 import re
+import codecs
 
 pathOriginal = r".\Defs"
 pathRus = r".\DefInjected"
@@ -21,6 +22,8 @@ tagText = ["label", "rulesStrings", "description", "gerund", "verb", "deathMessa
 allText = {}
 allTextValue = {}
 allTextExcess = {}
+XMLFiles = {}
+XMLNewFiles = {}
 
 def addElement(fileXML, elementText, text, nameDef):
     if("subSounds" not in elementText):
@@ -166,6 +169,17 @@ for key in allText.keys():
         for element in allElement:
             nameFile = allTextValue[element][1]
             print u"\nВ папке %s у файла %s, отсутствует:"%(key, nameFile),
+            path = os.path.join(pathRus, key)
+            XMLPath = os.path.join(path, nameFile)
+            if(os.path.isfile(XMLPath)):
+                if(key not in XMLFiles):
+                    XMLFiles[key] = {}
+                XMLFiles[key][nameFile] = os.path.join(path, nameFile)
+            if(key not in XMLNewFiles):
+                XMLNewFiles[key] = {}
+            if(nameFile not in XMLNewFiles[key]):
+                XMLNewFiles[key][nameFile] = []
+            XMLNewFiles[key][nameFile].append(element)
             print u"%s значение: %s"%(element, allTextValue[element][0])
 
 """Эта проверка не актуальна до тех пор пока скрипт не будет определять абстрактные переменные
@@ -174,3 +188,33 @@ for key in allTextExcess.keys():
     allElement = allTextExcess[key]
     for element in allElement:
         print u"%s"%element"""
+
+for defName in XMLNewFiles.keys():
+    for nameFile in XMLNewFiles[defName].keys():
+        if(defName in XMLFiles and nameFile in XMLFiles[defName]):
+            XMLPath = XMLFiles[defName][nameFile]
+            XMLParser = ET.XMLParser(encoding='utf-8')
+            tree = ET.parse(XMLPath, XMLParser)
+            root = tree.getroot()
+        else:
+            tree = ET.ElementTree()
+            newRoot = ET.Element(u"LanguageData")
+            tree._setroot(newRoot)
+            root = tree.getroot()
+        for element in XMLNewFiles[defName][nameFile]:
+            subElement = ET.SubElement(root, element)
+            subElement.text = allTextValue[element][0]
+        XMLNewPath = os.path.join(pathRusOrg, defName)
+        if(not os.path.exists(XMLNewPath)):
+            os.makedirs(XMLNewPath)
+        XMLNewPath = os.path.join(XMLNewPath, nameFile)
+        xml = codecs.open(XMLNewPath, "w", "utf-8")
+        xml.write(u'\ufeff')
+        xml.write(u"<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n")
+        xml.write(u"<%s>\n"%root.tag)
+        for element in root:
+            xml.write(u"\t<%s>"%element.tag)
+            xml.write(element.text)
+            xml.write(u"</%s>\n"%element.tag)
+        xml.write(u"</%s>\n"%root.tag)
+        xml.close()
