@@ -13,4 +13,4 @@
 	<Vent.label>вентиляция</Vent.label>
 	<Vent.description>Обычные вентиляционные трубы, которые позволяют температуре циркулировать между двумя соседними помещениями.</Vent.description>
 
-<PassiveCooler.label>passive cooler</PassiveCooler.label><PassiveCooler.description>A traditional unpowered cooler that works by water evaporation. Will run out and self-destruct after several days.</PassiveCooler.description></LanguageData>
+</LanguageData>

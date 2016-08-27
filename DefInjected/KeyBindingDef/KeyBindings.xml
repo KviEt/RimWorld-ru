@@ -57,4 +57,4 @@
   <ToggleLog.label>переключить отображение журнала</ToggleLog.label>
   <DebugTickOnce.label>следующий тик (отладка)</DebugTickOnce.label>
 
-<TickOnce.label>tick once</TickOnce.label><ToggleGodMode.label>toggle god mode</ToggleGodMode.label><ToggleDebugLog.label>toggle debug log</ToggleDebugLog.label><ToggleDebugActionsMenu.label>toggle debug actions menu</ToggleDebugActionsMenu.label><ToggleDebugLogMenu.label>toggle debug log menu</ToggleDebugLogMenu.label><ToggleDebugInspector.label>toggle debug inspector</ToggleDebugInspector.label><ToggleDebugSettingsMenu.label>toggle debug settings menu</ToggleDebugSettingsMenu.label></LanguageData>
+</LanguageData>

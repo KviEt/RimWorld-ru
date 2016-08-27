@@ -69,6 +69,4 @@
 	<Tortoise_Corpse.label>тушка черепахи</Tortoise_Corpse.label>
 	<Tortoise_Corpse.description>Мёртвая черепаха.</Tortoise_Corpse.description>
 
-
-
-<Deer.labelMale>buck</Deer.labelMale><Deer.labelFemale>doe</Deer.labelFemale><Ibex.labelMale>ibex ram</Ibex.labelMale><Ibex.labelFemale>ibex doe</Ibex.labelFemale><Elk.lifeStages.0.label>elk calf</Elk.lifeStages.0.label><Caribou.lifeStages.0.label>caribou calf</Caribou.lifeStages.0.label></LanguageData>
+</LanguageData>

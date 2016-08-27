@@ -67,4 +67,4 @@
 	<Hopper.label>загрузочная воронка</Hopper.label>
 	<Hopper.description>Содержит ресурсы для загрузки в различные аппараты. Например, в дозатор пасты.</Hopper.description>
 
-<DrugLab.label>drug lab</DrugLab.label><FermentingBarrel.label>fermenting barrel</FermentingBarrel.label><FermentingBarrel.description>A barrel for fermenting raw wort into beer.</FermentingBarrel.description><DeepDrill.label>deep drill</DeepDrill.label><DeepDrill.description>A deep-crust drilling rig for extracting minerals from deep under the surface. Use a ground-penetrating scanner to detect the resources.</DeepDrill.description></LanguageData>
+</LanguageData>

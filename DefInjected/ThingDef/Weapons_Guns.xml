@@ -95,4 +95,4 @@
 	<Gun_ChargeLance.label>энерго-копьё</Gun_ChargeLance.label>
 	<Gun_ChargeLance.description>Энергетическое копьеподобное оружие. Стреляет единичными зарядами с высокой скоростью полета.</Gun_ChargeLance.description>
 
-<BaseBullet.label>bullet</BaseBullet.label><Bullet_MachinePistol.label>Machine pistol bullet</Bullet_MachinePistol.label><Gun_MachinePistol.label>Machine pistol</Gun_MachinePistol.label><Gun_MachinePistol.description>A micro-submachine gun. Short range, low power, high rate of fire. Very quick to aim and fire.</Gun_MachinePistol.description></LanguageData>
+</LanguageData>
