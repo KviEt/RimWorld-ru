@@ -12,7 +12,7 @@ path = r".\Defs\ThoughtDefs\Thoughts_Situation_RoomStats.xml"
 tagText = ["label", "rulesStrings", "description", "gerund", "verb", "deathMessage", "pawnsPlural", "fixedName", "gerundLabel", "pawnLabel", "labelShort",
     "labelSocial", "stuffAdjective", "labelMale", "labelFemale", "quotation", "formatString", "skillLabel", "customLabel",
       "text", "name", "summary", "jobString", "letterLabelFriendly", "arrivalTextFriendly", "successfullyRemovedHediffMessage",
-      "arrivalTextEnemy", "letterLabelEnemy", "labelMechanoids", "recoveryMessage", "inspectLine", "beginLetter", "beginLetterLabel",
+      "arrivalTextEnemy", "letterLabelEnemy", "labelMechanoids", "recoveryMessage", "baseInspectLine", "beginLetter", "beginLetterLabel",
       "endMessage", "adjective", "reportString", "letterLabel", "letterText", "graphLabelY", "letter", "oldLabel", "labelSolidTended",
       "labelSolidTendedWell", "labelTendedInner", "labelTendedWellInner", "destroyedLabel", "labelTended", "labelTendedWell",
       "destroyedOutLabel", "destroyedLabel", "discoverLetterText", "discoverLetterLabel", "leaderTitle", "helpTexts", "rulesStrings",
