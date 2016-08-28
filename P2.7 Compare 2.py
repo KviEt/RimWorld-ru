@@ -2,6 +2,7 @@
 import os
 import xml.etree.ElementTree as ET
 import re
+import codecs
 
 pathOriginal = r".\Defs"
 pathRus = r".\DefInjected"
@@ -174,3 +175,12 @@ for key in allTextExcess.keys():
     allElement = allTextExcess[key]
     for element in allElement:
         print u"%s"%element"""
+
+txt = codecs.open("Result.txt", "w", "utf-8")
+txt.write(u'\ufeff')
+for defName in allText:
+    if(allText[defName]):
+        txt.write(u"В папке %s:\n"%defName)
+    for var in allText[defName]:
+        txt.write(u"\tТребуется перевести: %s\n"%allTextValue[var][0])
+txt.close()
