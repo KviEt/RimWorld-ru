@@ -8,8 +8,6 @@ pathOriginal = r".\Defs"
 pathRus = r".\DefInjected"
 pathRusOrg = r".\DefInjectedRaws"
 
-path = r".\Defs\ThoughtDefs\Thoughts_Situation_RoomStats.xml"
-
 tagText = ["label", "rulesStrings", "description", "gerund", "verb", "deathMessage", "pawnsPlural", "fixedName", "gerundLabel", "pawnLabel", "labelShort",
     "labelSocial", "stuffAdjective", "labelMale", "labelFemale", "quotation", "formatString", "skillLabel", "customLabel",
       "text", "name", "summary", "jobString", "letterLabelFriendly", "arrivalTextFriendly", "successfullyRemovedHediffMessage",
@@ -17,7 +15,7 @@ tagText = ["label", "rulesStrings", "description", "gerund", "verb", "deathMessa
       "endMessage", "adjective", "reportString", "letterLabel", "letterText", "graphLabelY", "letter", "oldLabel", "labelSolidTended",
       "labelSolidTendedWell", "labelTendedInner", "labelTendedWellInner", "destroyedLabel", "labelTended", "labelTendedWell",
       "destroyedOutLabel", "destroyedLabel", "discoverLetterText", "discoverLetterLabel", "leaderTitle", "helpTexts", "rulesStrings",
-           "instantlyOldLabel", "useLabel", "ingestCommandString", "ingestReportString"
+           "instantlyOldLabel", "useLabel", "ingestCommandString", "ingestReportString", "Description", "helpText", "rejectInputMessage", "onMapInstruction"
           ]
 allText = {}
 allTextValue = {}
@@ -62,7 +60,7 @@ def findText(element, tagPath, li, fileXML, nameDef, necessary):
                 li = li + 1
             text = subElement.text
             if(text):
-                expectSTR = re.compile(u"[a-z]+")
+                expectSTR = re.compile(u"[aA-zZ]+[ \t]+[aA-zZ]")
                 result = expectSTR.match(text)
                 if(result and text != u"false" and text != u"true"):
                     print tagPath + u"." + subElement.tag + u" значение:"

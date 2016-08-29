@@ -13,7 +13,7 @@ ex = [".label", ".rulesStrings", ".description", ".gerund", ".verb", ".deathMess
       ".arrivalTextEnemy", ".letterLabelEnemy", ".labelMechanoids", ".recoveryMessage", ".inspectLine", ".beginLetter", ".beginLetterLabel",
       ".endMessage", ".adjective", ".reportString", ".letterLabel", ".letterText", ".graphLabelY", ".letter", ".oldLabel", ".labelSolidTended",
       ".labelSolidTendedWell", ".labelTendedInner", ".labelTendedWellInner", ".destroyedLabel", ".labelTended", ".labelTendedWell",
-      ".destroyedOutLabel", ".destroyedLabel", ".discoverLetterText", ".discoverLetterLabel", ".leaderTitle"
+      ".destroyedOutLabel", ".destroyedLabel", ".discoverLetterText", ".discoverLetterLabel", ".leaderTitle", ".instantlyOldLabel", ".useLabel", ".ingestCommandString", ".ingestReportString", ".Description", ".helpText", ".rejectInputMessage", ".onMapInstruction"
           ]
 ex2 = [".helpTexts.", ".rulesStrings."]
 
