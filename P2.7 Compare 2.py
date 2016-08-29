@@ -59,6 +59,9 @@ def findText(element, tagPath, li, fileXML, nameDef, necessary):
             if(text):
                 expectSTR = re.compile(u"[aA-zZ]+[ \t]+[aA-zZ]")
                 result = expectSTR.match(text)
+                if(not result):
+                    expectSTR = re.compile(u"[a-z]+")
+                    result = expectSTR.match(text)
                 if(result and text != u"false" and text != u"true"):
                     print tagPath + u"." + subElement.tag + u" значение:"
                     print text
