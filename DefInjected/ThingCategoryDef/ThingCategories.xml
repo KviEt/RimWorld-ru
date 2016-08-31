@@ -2,7 +2,7 @@
 <LanguageData>
 
 	<Root.label>корень</Root.label>
-	<Resources.label>ресурсы</Resources.label>
+	<!--<Resources.label>ресурсы</Resources.label>-->
 	<Foods.label>продовольствие</Foods.label>
 	<FoodMeals.label>блюда</FoodMeals.label>
 	<FoodRaw.label>продукты</FoodRaw.label>

@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 	<Root.label>корень</Root.label>
-	<Resources.label>ресурсы</Resources.label>
 	<Foods.label>продовольствие</Foods.label>
 	<FoodMeals.label>блюда</FoodMeals.label>
 	<FoodRaw.label>продукты</FoodRaw.label>

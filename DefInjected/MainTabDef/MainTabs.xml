@@ -26,10 +26,10 @@
 
 	<History.label>история</History.label>
 	<History.description>Обзор истории вашего поселения.</History.description>
-
+<!--
 	<Statistics.label>статистика</Statistics.label>
 	<Statistics.description>Статистика вашего поселения.</Statistics.description>
-
+-->
 	<Research.label>исследования</Research.label>
 	<Research.description>Меню исследований в вашем поселении, тут вы можете посмотреть и выбрать следующее исследование.</Research.description>
 

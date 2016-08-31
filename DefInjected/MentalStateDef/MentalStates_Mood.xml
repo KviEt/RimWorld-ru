@@ -22,13 +22,13 @@
 	<GiveUpExit.baseInspectLine>Душевное состояние: сдался и уходит</GiveUpExit.baseInspectLine>
 
 	
-
+<!--
 	<BingingAlcohol.label>налегает на алкоголь</BingingAlcohol.label>
 	<BingingAlcohol.beginLetterLabel>пьян</BingingAlcohol.beginLetterLabel>
 	<BingingAlcohol.beginLetter>{0} напивается до упаду.</BingingAlcohol.beginLetter>
 	<BingingAlcohol.recoveryMessage>{0} перестал пить.</BingingAlcohol.recoveryMessage>
 	<BingingAlcohol.baseInspectLine>Душевное состояние: напивается</BingingAlcohol.baseInspectLine>
-
+-->
 	<WanderPsychotic.label>ошеломлённо блуждает</WanderPsychotic.label>
 	<WanderPsychotic.beginLetterLabel>ошарашен</WanderPsychotic.beginLetterLabel>
 	<WanderPsychotic.beginLetter>{0} сломлен и ошеломлённо блуждает.</WanderPsychotic.beginLetter>

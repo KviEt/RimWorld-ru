@@ -53,8 +53,8 @@
   <DesignatorRotateRight.label>повернуть вправо</DesignatorRotateRight.label>
 
   
-
+<!--
   <ToggleLog.label>переключить отображение журнала</ToggleLog.label>
   <DebugTickOnce.label>следующий тик (отладка)</DebugTickOnce.label>
-
+-->
 </LanguageData>
