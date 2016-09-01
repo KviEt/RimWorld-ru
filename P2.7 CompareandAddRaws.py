@@ -6,8 +6,8 @@ import re
 import codecs
 
 pathOriginal = r".\Defs"
-pathRus = r".\DefInjected"
-pathRusOrg = r".\DefInjectedRaws"
+pathTranslation = r".\DefInjected"
+pathTranslationOrg = r".\DefInjectedRaws"
 
 tagText = ["label", "rulesStrings", "description", "gerund", "verb", "deathMessage", "pawnsPlural", "fixedName", "gerundLabel", "pawnLabel", "labelShort",
     "labelSocial", "stuffAdjective", "labelMale", "labelFemale", "quotation", "formatString", "skillLabel", "customLabel",
@@ -195,7 +195,7 @@ def findXMLORG(path, funcSearch):
             if os.path.isdir(subDir):
                 findXMLORG(subDir)
 
-def findXMLRUS(path, nameDef):
+def findXMLTranslation(path, nameDef):
     listOfDir = os.listdir(path)
     for fileXML in listOfDir:
         if ".xml" in fileXML:
@@ -331,20 +331,20 @@ for defName in allDefClass:
 
 readXMLORG(findDef)
 
-listOfDir = os.listdir(pathRus)
+listOfDir = os.listdir(pathTranslation)
 for nameDef in listOfDir:
     notExpected = True
     if(nameDef in allText):
         notExpected = False
-        sub = os.path.join(pathRus, nameDef)
+        sub = os.path.join(pathTranslation, nameDef)
         if os.path.isdir(sub): 
-            findXMLRUS(sub, nameDef)
+            findXMLTranslation(sub, nameDef)
     if((nameDef[-1] == 's' or nameDef[-1] == 'S') and nameDef[:-1] in allText):
         notExpected = False
-        sub = os.path.join(pathRus, nameDef)
+        sub = os.path.join(pathTranslation, nameDef)
         nameDef = nameDef[:-1]
         if os.path.isdir(sub): 
-            findXMLRUS(sub, nameDef)
+            findXMLTranslation(sub, nameDef)
     if(notExpected):
         print u"Внимание! Неожидаемый класс %s в переводе"%nameDef
 
@@ -354,9 +354,9 @@ for key in allText.keys():
         for element in allElement:
             nameFile = allTextValue[element][1]
             print u"\nВ папке %s у файла %s, отсутствует:"%(key, nameFile),
-            path = os.path.join(pathRus, key)
+            path = os.path.join(pathTranslation, key)
             if(not os.path.exists(path)):
-                path = os.path.join(pathRus, key+'s')
+                path = os.path.join(pathTranslation, key+'s')
             XMLPath = os.path.join(path, nameFile)
             if(os.path.isfile(XMLPath)):
                 if(key not in XMLFiles):
@@ -390,7 +390,7 @@ for defName in XMLNewFiles.keys():
         for element in XMLNewFiles[defName][nameFile]:
             subElement = ET.SubElement(root, element)
             subElement.text = allTextValue[element][0]
-        XMLNewPath = os.path.join(pathRusOrg, defName)
+        XMLNewPath = os.path.join(pathTranslationOrg, defName)
         if(not os.path.exists(XMLNewPath)):
             os.makedirs(XMLNewPath)
         XMLNewPath = os.path.join(XMLNewPath, nameFile)
