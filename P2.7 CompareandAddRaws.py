@@ -326,15 +326,21 @@ for defName in allDefClass:
 
 readXMLORG(findDef)
 
-print allDefClass["ThingDef"]["MakeableDrugPillBase"]
-
 listOfDir = os.listdir(pathRus)
 for nameDef in listOfDir:
+    notExpected = True
     if(nameDef in allText):
+        notExpected = False
         sub = os.path.join(pathRus, nameDef)
         if os.path.isdir(sub): 
             findXMLRUS(sub, nameDef)
-    else:
+    if((nameDef[-1] == 's' or nameDef[-1] == 'S') and nameDef[:-1] in allText):
+        notExpected = False
+        sub = os.path.join(pathRus, nameDef)
+        nameDef = nameDef[:-1]
+        if os.path.isdir(sub): 
+            findXMLRUS(sub, nameDef)
+    if(notExpected):
         print u"Ошибка! Неожидаемый класс %s в переводе"%nameDef
 
 for key in allText.keys():
@@ -344,6 +350,8 @@ for key in allText.keys():
             nameFile = allTextValue[element][1]
             print u"\nВ папке %s у файла %s, отсутствует:"%(key, nameFile),
             path = os.path.join(pathRus, key)
+            if(not os.path.exists(path)):
+                path = os.path.join(pathRus, key+'s')
             XMLPath = os.path.join(path, nameFile)
             if(os.path.isfile(XMLPath)):
                 if(key not in XMLFiles):
