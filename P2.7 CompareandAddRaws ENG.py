@@ -336,7 +336,7 @@ for nameDef in listOfDir:
         if os.path.isdir(sub): 
             findXMLRUS(sub, nameDef)
     else:
-        print u"Warning! Not expected the %s folder in the Injected folder"%nameDef
+        print u"Warning! Not expected the %s folder in the DefInjected folder"%nameDef
 
 for key in allText.keys():
     allElement = allText[key]
