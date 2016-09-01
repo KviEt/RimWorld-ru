@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import xml.etree.ElementTree as ET
+from xml.etree.ElementTree import ParseError
 import re
 import codecs
 
@@ -169,7 +170,11 @@ def gather(path, fileXML, funcSearch):
     funcSearch(root, fileXML)
     
 def compare(path, nameDef, fileXML):
-    tree = ET.parse(path)
+    try:
+        tree = ET.parse(path)
+    except ParseError as err:
+        print u"\nError! Can't read xml file, path: %s, Reason: '%s'"%(path, err.message)
+        raise err
     root = tree.getroot()
     for element in root:
         nameElement = element.tag

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import xml.etree.ElementTree as ET
+from xml.etree.ElementTree import ParseError
 import re
 import codecs
 
@@ -168,7 +169,11 @@ def gather(path, fileXML, funcSearch):
     funcSearch(root, fileXML)
     
 def compare(path, nameDef, fileXML):
-    tree = ET.parse(path)
+    try:
+        tree = ET.parse(path)
+    except ParseError as err:
+        print u"\nОшибка! Невозможно прочитать xml файл по пути %s, Причина: '%s'"%(path, err.message)
+        raise err
     root = tree.getroot()
     for element in root:
         nameElement = element.tag
@@ -341,7 +346,7 @@ for nameDef in listOfDir:
         if os.path.isdir(sub): 
             findXMLRUS(sub, nameDef)
     if(notExpected):
-        print u"Ошибка! Неожидаемый класс %s в переводе"%nameDef
+        print u"Внимание! Неожидаемый класс %s в переводе"%nameDef
 
 for key in allText.keys():
     allElement = allText[key]
